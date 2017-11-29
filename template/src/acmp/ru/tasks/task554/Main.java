@@ -1,18 +1,16 @@
-package acmp.ru.tasks.task1114;
+package acmp.ru.tasks.task554;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
     void solve(Scanner in, PrintWriter out) {
-        int v = in.nextInt();
-        int t = in.nextInt();
-        //(v*t) % 109 -> [1...109]
-        //(v*t + 1) % 109 -> [0...108]
-        //(v*t) % 109 + 1 -> [1...109]
-        //((v*t) % 109 + 109 ) % 109 -> [0...108]
-        //((v*t) % 109 + 109 ) % 109 + 1 -> [1...109]
-        out.println(((v*t)%109+109)%109+1);
+        long n = in.nextLong();
+        long a1 = 2;
+        long an = 2 << (n+1-1);
+
+
+        out.println((2+(2 << (n-1)))*n/2);
     }
     void run() {
         try (Scanner in = new Scanner(System.in);

@@ -1,18 +1,23 @@
-package acmp.ru.tasks.task1114;
+package acmp.ru.tasks.task667;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
     void solve(Scanner in, PrintWriter out) {
+        int d = in.nextInt();
         int v = in.nextInt();
-        int t = in.nextInt();
-        //(v*t) % 109 -> [1...109]
-        //(v*t + 1) % 109 -> [0...108]
-        //(v*t) % 109 + 1 -> [1...109]
-        //((v*t) % 109 + 109 ) % 109 -> [0...108]
-        //((v*t) % 109 + 109 ) % 109 + 1 -> [1...109]
-        out.println(((v*t)%109+109)%109+1);
+        int e = in.nextInt();
+
+        int kuci = v / 2;
+
+        if(v % 2 != 0){
+            out.println(0);
+        } else if (d+v/e < kuci) {
+            out.println(0);
+        } else {
+            out.println(d+v/e);
+        }
     }
     void run() {
         try (Scanner in = new Scanner(System.in);
