@@ -1,4 +1,4 @@
-package acmp.ru.statementTasks.task677;
+package acmp.ru.statementTasks.task606;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
@@ -10,18 +10,15 @@ public class Template {
      * */
 
     void solve(Scanner in, PrintWriter out) {
-        int k = in.nextInt();
-        int n = in.nextInt();
-        int m = in.nextInt();
-        int d = in.nextInt();
-        int c = d*k*m*n;
-        int z = k*n*m - n*m - k*m - k*n;
-        int x = c/z;
+        int a = in.nextInt();
+        int b = in.nextInt();
+        int c = in.nextInt();
 
-        if(x % k != 0 || x % m != 0 || x % n != 0 || z <= 0 || c % z != 0){
-            out.println("-1");
+
+        if(a < b+c && b < a+c && c < a+b){
+            out.println("YES");
         } else {
-            out.println(x);
+            out.println("NO");
         }
     }
 

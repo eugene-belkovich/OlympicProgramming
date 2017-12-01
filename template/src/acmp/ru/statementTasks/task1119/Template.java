@@ -1,27 +1,19 @@
-package acmp.ru.statementTasks.task677;
+package acmp.ru.statementTasks.task1119;
 
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Template {
 
-    /*
-     *
-     * */
-
     void solve(Scanner in, PrintWriter out) {
-        int k = in.nextInt();
-        int n = in.nextInt();
-        int m = in.nextInt();
-        int d = in.nextInt();
-        int c = d*k*m*n;
-        int z = k*n*m - n*m - k*m - k*n;
-        int x = c/z;
-
-        if(x % k != 0 || x % m != 0 || x % n != 0 || z <= 0 || c % z != 0){
-            out.println("-1");
+        int x1 = in.nextInt();
+        int y1 = in.nextInt();
+        int x2 = in.nextInt();
+        int y2 = in.nextInt();
+        if( x1 == x2 || y1 == y2 ) {
+            out.println("YES");
         } else {
-            out.println(x);
+            out.println("NO");
         }
     }
 
