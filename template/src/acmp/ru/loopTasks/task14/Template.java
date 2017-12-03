@@ -6,15 +6,17 @@ import java.util.Scanner;
 public class Template {
 
     void solve(Scanner in, PrintWriter out) {
-        int a = in.nextInt();
-        int b = in.nextInt();
-        int p = a*b;
-        while( b != 0) {
-            int t = a % b;
-            a = b;
-            b = t;
+        int n = in.nextInt();
+        int scale = in.nextInt();
+        int p = 1;
+        int s = 0;
+        while( n != 0) {
+            int last = n % scale;
+            p *= last;
+            s += last;
+            n /= scale;
         }
-        out.print(p/a);
+        out.print(p - s);
     }
 
     void run() {
