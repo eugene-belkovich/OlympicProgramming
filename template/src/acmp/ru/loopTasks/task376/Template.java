@@ -6,59 +6,41 @@ import java.util.Scanner;
 public class Template {
 
     void solve(Scanner in, PrintWriter out) {
-        int nDays = in.nextInt();
-        int weekDay = 2;
-        int day = 1;
-        int month = 1;
-        int year = 2008;
-        for (int i = 0; i < nDays; i++) {
-            int daysInFebruary;
+        int birthDay = in.nextInt();
+        int birthMonth = in.nextInt();
+        int birthYear = in.nextInt();
+        int day = in.nextInt();
+        int month = in.nextInt();
+        int year = in.nextInt();
+        int count = 0;
+        while (!(day == birthDay && month == birthMonth)) {
+            int dif;
             if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
-                daysInFebruary = 29;
+                dif = 29;
             } else {
-                daysInFebruary = 28;
+                dif = 28;
             }
-            int daysInMonth;
+            int din;
             if (month == 2) {
-                daysInMonth = daysInFebruary;
+                din = dif;
             } else if (month == 4 || month == 6 || month == 9 || month == 11) {
-                daysInMonth = 30;
+                din = 30;
             } else {
-                daysInMonth = 31;
+                din = 31;
             }
-            if (day == 31 && month == 12) {
+            if (day == 31 && month ==12){
                 day = 1;
                 month = 1;
                 year++;
-            } else if (day == daysInMonth){
+            } else if (day == din) {
                 day = 1;
                 month++;
             } else {
                 day++;
             }
-            if (weekDay < 7) {
-                weekDay++;
-            } else {
-                weekDay = 1;
-            }
+            count++;
         }
-        //Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
-        if (weekDay == 1) {
-            out.print("Monday");
-        } else if (weekDay == 2){
-            out.print("Tuesday");
-        } else if (weekDay == 3){
-            out.print("Wednesday");
-        } else if (weekDay == 4){
-            out.print("Thursday");
-        } else if (weekDay == 5){
-            out.print("Friday");
-        } else if (weekDay == 6){
-            out.print("Saturday");
-        } else if (weekDay == 7){
-            out.print("Sunday");
-        }
-        out.print(", " + day/10 + day%10 + "." + month/10 + month%10);
+        out.print(count);
     }
 
     void run() {
