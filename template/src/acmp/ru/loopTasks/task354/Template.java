@@ -4,23 +4,17 @@ import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Template {
-
     void solve(Scanner in, PrintWriter out) {
         int n = in.nextInt();
-        int div = 2;
-        String res = "";
-        while (n > 1 || div < n) {
-            if ( n % div == 0) {
-                if (res.length() != 0) {
-                    out.print("*");
-                }
-                res += div;
-                out.print(div);
-                n /= div;
+        for (long d = 2; d*d <= n;) {
+            if (n % d  == 0) {
+                n /= d;
+                out.print(d + "*");
             } else {
-                div++;
+                d++;
             }
         }
+        out.print(n);
     }
 
     void run() {
